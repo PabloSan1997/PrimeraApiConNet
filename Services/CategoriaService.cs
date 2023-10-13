@@ -9,6 +9,7 @@ public class CategoriaService: ICategoriaService
         context = dbContext;
     }
 
+
     public IEnumerable<Categoria> Get()
     {
         return context.Categorias;
