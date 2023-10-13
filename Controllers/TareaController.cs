@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using primeraapi.Models;
-using primeraapi.services;
+using primeraapi.Services;
 
 namespace primeraapi.Controllers;
 

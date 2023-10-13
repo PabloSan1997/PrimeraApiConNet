@@ -1,6 +1,5 @@
 using primeraapi.Models;
-
-namespace primeraapi.services;
+namespace primeraapi.Services;
 
 public class TareasService : ITareasService
 {

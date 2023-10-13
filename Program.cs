@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using primeraapi.services;
+using primeraapi;
+using primeraapi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,8 @@ builder.Services.AddScoped<IHelloWorldService>(p=> new HelloWorldService());
 builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 builder.Services.AddScoped<ITareasService, TareasService>();
 
+builder.Services.AddNpgsql<TareasContext>(builder.Configuration.GetConnectionString("cnTareasPostgres"));
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);//Corregir problemas con timestamp
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
